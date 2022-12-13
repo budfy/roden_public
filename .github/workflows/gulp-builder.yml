@@ -1,0 +1,20 @@
+name: CI -> Deploy to My website
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Here is the deployment action
+      - name: Upload from docs via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: tzk301.nic.ua
+          user: gulpFtpPublisher@mvikna.in.ua
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: "./docs"
+          remote_dir: "/public_html"
+          delete: "true"
+          max_retries: "7"
