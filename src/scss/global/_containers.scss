@@ -1,0 +1,23 @@
+.container {
+  --padding: 4rem;
+  --mwidth: 1792px;
+  height: 100%;
+  width: 100%;
+  padding: 0 var(--padding);
+  max-width: calc(var(--mwidth) + (var(--padding) * 2));
+  margin: 0 auto;
+
+  &.--base {
+    --mwidth: 1376px;
+  }
+
+  &.--left {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  &.--right {
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
