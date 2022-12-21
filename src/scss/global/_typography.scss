@@ -1,0 +1,51 @@
+@mixin title {
+  font-family: Nunito, sans-serif;
+}
+
+h1,
+.--h1 {}
+
+h2,
+.--h2 {}
+
+h3,
+.--h3 {}
+
+h4,
+.--h4 {}
+
+h5,
+.--lead,
+.--h5 {}
+
+body {
+  font-family: "Noto sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color__black-2);
+}
+
+a,
+.--link {
+  font-weight: bolder;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.24s;
+
+  &:hover {
+    color: var(--color__pink-1);
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--color__purple);
+  }
+}
