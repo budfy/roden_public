@@ -1,0 +1,30 @@
+.button {
+  @include no-btn;
+  font-weight: 700;
+  color: var(--color__back);
+  padding: 0.5em 2em;
+  background-color: var(--color__pink-2);
+  box-shadow: 0.25em 0.25em 1em var(--color__shadow-3);
+  border-radius: 0.25em;
+
+  transition: 0.24s;
+
+  &:hover {
+    background-color: var(--color__pink-1);
+    border-radius: 1em;
+    box-shadow: 0 0.25em 1em var(--color__shadow-1),
+      -16px 16px 48px var(--color__shadow-3);
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &:focus-visible {}
+
+  &:active {
+    background-color: var(--color__pink-2);
+    box-shadow: 0.25em 0.25em 1em var(--color__shadow-3);
+    border-radius: 1em;
+  }
+}
