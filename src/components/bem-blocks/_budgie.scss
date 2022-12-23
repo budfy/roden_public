@@ -1,0 +1,13 @@
+.budgie {
+  transition: 0.24s;
+
+  &:hover {}
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &:focus-visible {}
+
+  &:active {}
+}
