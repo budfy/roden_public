@@ -7,13 +7,11 @@
   background-color: var(--color__pink-2);
   box-shadow: 0.25em 0.25em 1em var(--color__shadow-3);
   border-radius: 0.25em;
-
   transition: 0.24s;
 
   &:hover {
     color: var(--color__back);
     background-color: var(--color__pink-1);
-    border-radius: 1em;
     box-shadow: 0 0.25em 1em var(--color__shadow-1),
       -16px 16px 48px var(--color__shadow-3);
   }
@@ -34,6 +32,5 @@
     color: var(--color__back);
     background-color: var(--color__pink-2);
     box-shadow: 0.25em 0.25em 1em var(--color__shadow-3);
-    border-radius: 1em;
   }
 }

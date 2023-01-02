@@ -1,13 +1,33 @@
 .budgie {
+  @include no-btn;
+  text-decoration: none;
   transition: 0.24s;
+  background: linear-gradient(0deg, var(--color__back), var(--color__back)),
+    linear-gradient(180deg, var(--color__back) 0%, var(--color__grey-1) 100%);
+  color: var(--color__black-2);
+  box-shadow: 0 0.5em 3em var(--color__shadow-4);
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  font-family: "Nunito";
+  font-weight: 700;
 
-  &:hover {}
+  &:hover {
+    box-shadow: 0 0.5em 3em var(--color__shadow-2);
+    color: var(--color__purple);
+
+  }
 
   &:focus {
     outline: transparent;
   }
 
-  &:focus-visible {}
+  &:focus-visible {
+    text-decoration: underline;
+    color: var(--color__purple);
+    outline: 2px solid var(--color__purple);
+  }
 
-  &:active {}
+  &:active {
+    box-shadow: 0 0.5em 3em var(--color__shadow-2);
+  }
 }
