@@ -1,0 +1,51 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem;
+  max-width: 400px;
+
+  &__label {
+    font-family: "Noto Sans";
+    color: var(--color__black-2);
+    font-size: 0.75em;
+    font-weight: 400;
+    line-height: 1.5;
+    order: 0;
+  }
+
+  &__label-error {
+    color: var(--color__pink-1);
+    display: none;
+  }
+
+  &__field {
+    margin-top: 0.5em;
+    background-color: var(--color__back);
+    box-shadow: 0 0.25em 1em var(--color__shadow-4);
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    border: 1px solid var(--color__grey-2);
+    order: 1;
+
+    &:focus {
+      outline: transparent;
+    }
+
+    &:focus-visible {
+      outline: transparent;
+      border-color: transparent;
+      box-shadow: 0 0.5em 3em var(--color__shadow-2);
+    }
+  }
+
+  &:hover {
+    &>.input__label {
+      color: var(--color__black-0);
+    }
+
+    &>.input__field {
+      border-color: transparent;
+      box-shadow: 0 0.5em 3em var(--color__shadow-4);
+    }
+  }
+}

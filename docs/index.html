@@ -27,12 +27,24 @@
 
 
 <body>
-  <header class="header"></header>
+  <div class="page-wrapper">
+    <div class="page-inner">
+      
+      <header class="header"></header>
 
-  <main class="main">
-  </main>
-  <footer class="footer"></footer>
+      <main class="main">
+        <label class="input">
+          <input class="input__field"
+                 id="name"
+                 type="text"
+                 data-errortext="Ми повинні знати, як до вас звертатися">
+          <span class="input__label">Ваше ім'я <span class="input__label-error"></span></span>
+        </label>
+      </main>
+    </div>
+    <footer class="footer"></footer>
 
+  </div>
   <script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
 
