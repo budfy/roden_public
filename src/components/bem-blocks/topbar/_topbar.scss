@@ -1,0 +1,56 @@
+.topbar {
+  padding-top: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  transition: all ease-in-out 0.5s;
+
+  &__wrapper {}
+
+  &__logo {
+    height: 9rem;
+    width: 9rem;
+    transition: all 0.5s;
+  }
+
+  &__logo-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__inner {}
+
+  &__icon-link {
+    margin-left: 2rem;
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    color: var(--color__black-1);
+
+    &+& {
+      margin-left: 2rem;
+    }
+  }
+
+  &__icon-svg {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__lang-link {
+    padding: 0.25em;
+    line-height: 1;
+    margin-left: 2rem;
+  }
+}
