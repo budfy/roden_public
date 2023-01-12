@@ -1,0 +1,31 @@
+.header {
+  min-height: 100vh;
+  padding: 4rem 0;
+
+  &__inner {}
+
+  &__content {
+    flex: 0 1 37.5rem;
+  }
+
+  &__title {}
+
+  &__text {
+    margin-top: 0.5rem;
+  }
+
+  &__link {
+    margin-top: 3.5rem;
+  }
+
+  &__pic {
+    flex: 0 1 50rem;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: right center;
+  }
+}

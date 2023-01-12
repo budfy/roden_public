@@ -1,11 +1,13 @@
 .topbar {
-  padding-top: 2rem;
+  padding: 2rem 0;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   max-width: 100vw;
   transition: all ease-in-out 0.5s;
+  backdrop-filter: blur(2rem);
+  background-color: rgba(255, 255, 255, 0.5);
 
   &__wrapper {}
 
@@ -33,7 +35,24 @@
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
-    color: var(--color__black-1);
+    color: var(--color__black-2);
+    transition: 0.24s;
+
+    &:hover {
+      color: var(--color__pink-1)
+    }
+
+    &:focus {
+      outline: transparent;
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--color__pink-1);
+    }
+
+    &:active {
+      color: var(--color__purple);
+    }
 
     &+& {
       margin-left: 2rem;
