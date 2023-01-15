@@ -1,0 +1,22 @@
+.methods {
+  padding-bottom: 8px;
+
+  &__wrapper {
+    width: calc(100% + 3rem);
+    padding: 0 3rem 0 0;
+    margin-left: -3rem;
+    overflow: clip;
+  }
+
+  &__inner {
+    margin-right: -5rem;
+    padding: 3rem;
+    overflow-x: auto;
+  }
+
+  &__item {
+    &+& {
+      margin-left: 2rem;
+    }
+  }
+}
