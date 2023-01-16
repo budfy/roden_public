@@ -1,0 +1,27 @@
+.cases {
+  margin-top: 6rem;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2.5rem;
+  }
+
+  &__item {
+    height: 100px;
+    border: 1px solid var(--color__pink-1);
+
+    &:nth-child(1) {
+      grid-column: span 2;
+    }
+
+    &:nth-child(2) {}
+
+    &:nth-child(3) {}
+
+    &:nth-child(4) {}
+
+    &:nth-child(5) {}
+  }
+}
