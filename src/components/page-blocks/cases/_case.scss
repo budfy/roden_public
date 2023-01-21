@@ -1,0 +1,101 @@
+.case {
+  position: relative;
+  max-width: 55.25rem;
+
+  &__inner {
+    position: sticky;
+    top: 6rem;
+  }
+
+  &__header {
+    opacity: 0;
+    transition: all ease-in-out 0.75s;
+  }
+
+  &__logo {
+    width: 8.25rem;
+    height: 5.75rem;
+  }
+
+  &__logo-image {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: left top;
+  }
+
+  &__description {
+    margin-left: 2rem;
+  }
+
+  &__title {
+    color: var(--color__black-2);
+  }
+
+  &__text {
+    color: var(--color__black-1);
+    margin-top: 1.5rem;
+  }
+
+  &__body {
+    opacity: 0.5;
+    margin-top: 2rem;
+    transition: all ease-in-out 0.75s;
+  }
+
+  &__pic {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 2rem var(--color__shadow-4);
+    padding: 0;
+  }
+
+  &__image {
+    display: block;
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__tags {
+    opacity: 0;
+    margin-top: 2rem;
+    transition: all ease-in-out 0.75s;
+  }
+
+  &__tag {
+    &+& {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &:hover &__header {
+    opacity: 1;
+  }
+
+  &:hover &__body {
+    opacity: 1;
+  }
+
+  &:hover &__tags {
+    opacity: 1;
+  }
+
+  &.--small {
+    .case__description {
+      margin-left: 1rem;
+    }
+
+    .case__title {
+      font-size: 1rem;
+    }
+
+    .case__text {
+      font-size: 0.75rem;
+    }
+  }
+}

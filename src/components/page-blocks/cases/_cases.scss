@@ -9,19 +9,25 @@
   }
 
   &__item {
-    height: 100px;
-    border: 1px solid var(--color__pink-1);
+    margin: 0 auto;
 
     &:nth-child(1) {
       grid-column: span 2;
     }
 
-    &:nth-child(2) {}
+    &:nth-child(2),
+    &:nth-child(4) {
+      max-width: 31rem;
+    }
 
-    &:nth-child(3) {}
+    &:nth-child(3) {
+      grid-column: span 3;
+    }
 
     &:nth-child(4) {}
 
-    &:nth-child(5) {}
+    &:nth-child(5) {
+      grid-column: span 2;
+    }
   }
 }
