@@ -1,0 +1,33 @@
+.cases {
+  margin-top: 6rem;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2.5rem;
+  }
+
+  &__item {
+    margin: 0 auto;
+
+    &:nth-child(1) {
+      grid-column: span 2;
+    }
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      max-width: 31rem;
+    }
+
+    &:nth-child(3) {
+      grid-column: span 3;
+    }
+
+    &:nth-child(4) {}
+
+    &:nth-child(5) {
+      grid-column: span 2;
+    }
+  }
+}
