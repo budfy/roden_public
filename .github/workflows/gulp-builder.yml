@@ -19,6 +19,6 @@ jobs:
           user: chc214115c_github
           password: ${{ secrets.FTP_PASSWORD }}
           local_dir: "./docs"
-          remote_dir: "/www/romans.pp.ua/"
+          remote_dir: "./"
           delete: "true"
           max_retries: "7"
