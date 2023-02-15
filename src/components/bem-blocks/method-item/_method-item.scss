@@ -5,6 +5,8 @@
   background: linear-gradient(0deg, var(--color__back), var(--color__back)),
     linear-gradient(180deg, var(--color__back) 0%, var(--color__grey-1) 100%);
   box-shadow: 0 0.5rem 3rem var(--color__shadow-4);
+  position: relative;
+  z-index: 2;
 
   &__content {
     flex: 0 1 100%;

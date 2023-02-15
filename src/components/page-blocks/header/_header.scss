@@ -6,6 +6,8 @@
 
   &__content {
     flex: 0 1 37.5rem;
+    position: relative;
+    z-index: 2;
   }
 
   &__title {}

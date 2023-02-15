@@ -1,6 +1,7 @@
 .case {
   position: relative;
   max-width: 55.25rem;
+  z-index: 2;
 
   &__inner {
     position: sticky;
