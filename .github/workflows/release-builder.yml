@@ -1,11 +1,8 @@
-name: CI -> Deploy to Test
+name: CI -> Deploy to Prod
 on:
   push:
     branches: 
-      - develop
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'relese/**'
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,6 +16,6 @@ jobs:
           user: chc214115c_github
           password: ${{ secrets.FTP_PASSWORD }}
           local_dir: "./docs"
-          remote_dir: "./preview"
+          remote_dir: "./"
           delete: "true"
           max_retries: "7"
