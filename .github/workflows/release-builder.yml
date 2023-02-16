@@ -13,8 +13,8 @@ jobs:
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: q1.cityhost.com.ua
-          user: chc214115c_github
-          password: ${{ secrets.FTP_PASSWORD }}
+          user: chc214115c_roden-publ
+          password: ${{ secrets.FTP_PASSWORD_PUBL }}
           local_dir: "./docs"
           remote_dir: "./"
           delete: "true"
