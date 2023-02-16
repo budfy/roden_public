@@ -5,7 +5,7 @@
   &__inner {}
 
   &__content {
-    flex: 0 1 37.5rem;
+    flex: 0 1 45rem;
     position: relative;
     z-index: 2;
   }
@@ -20,8 +20,9 @@
     margin-top: 3.5rem;
   }
 
-  &__pic {
-    flex: 0 1 50rem;
+  &__pic,
+  &__video-wrapper {
+    flex: 0 1 45rem;
   }
 
   &__image {
