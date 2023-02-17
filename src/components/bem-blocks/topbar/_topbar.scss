@@ -163,18 +163,6 @@
     }
   }
 
-  &__mobile-menu {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    backdrop-filter: blur(2rem);
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: -1rem 0 1rem var(--color__shadow-4);
-    height: 100vh;
-    padding: 5rem 2rem 2rem;
-  }
-
   &__menu-wrapper {
     margin-top: 2rem;
   }

@@ -1,0 +1,110 @@
+.mobile-menu {
+  transition: all ease-in-out 0.5s;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateX(120%);
+  backdrop-filter: blur(2rem);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: -0.25rem 0 .5rem var(--color__shadow-4);
+  height: 100vh;
+  padding: 5rem 2rem 2rem;
+  z-index: 20;
+  max-width: 100vw;
+  min-width: 35vw;
+
+  @media screen and (max-width: 991px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__close {
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    margin-left: auto;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 65%;
+      top: 50%;
+      left: 50%;
+      background-color: var(--color__pink-1);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__wrapper {}
+
+  &__menu-mobile {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2rem 0 0;
+  }
+
+  &__bottom {
+    margin-top: auto;
+    padding-top: 2rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__icon-link {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    color: var(--color__black-2);
+    transition: all ease-in-out 0.25s;
+
+    &:hover {
+      color: var(--color__pink-1)
+    }
+
+    &:focus {
+      outline: transparent;
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--color__pink-1);
+    }
+
+    &:active {
+      color: var(--color__purple);
+    }
+
+    &+& {
+      margin-left: 2rem;
+    }
+  }
+
+  &__icon-svg {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__lang-link {
+    padding: 0.25em;
+    line-height: 1;
+    margin-left: 2rem;
+  }
+}
