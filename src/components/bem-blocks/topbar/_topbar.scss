@@ -5,13 +5,17 @@
   left: 0;
   width: 100%;
   max-width: 100vw;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s, background-color 0s;
   backdrop-filter: blur(2rem);
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 0;
 
   &.--header {
-    position: static;
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
   }
 
   &.--main {
@@ -26,6 +30,11 @@
     height: 9rem;
     width: 9rem;
     transition: all 0.5s;
+
+    @media screen and (max-width: 991px) {
+      height: 6rem;
+      width: 6rem;
+    }
   }
 
   &__logo-image {
@@ -35,7 +44,11 @@
     object-position: center;
   }
 
-  &__inner {}
+  &__inner {
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
 
   &__icon-link {
     margin-left: 2rem;
@@ -82,5 +95,92 @@
     padding: 0.25em;
     line-height: 1;
     margin-left: 2rem;
+  }
+
+  &__burger {
+    display: none;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+    position: relative;
+    margin-left: auto;
+    z-index: 21;
+
+    @media screen and (max-width: 991px) {
+      display: block;
+    }
+  }
+
+  &__burger-row {
+    position: absolute;
+    width: 2rem;
+    height: 1px;
+    border-radius: 0.25rem;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: var(--color__black-1);
+    transition: all ease-in-out 0.25s;
+
+    &:nth-child(1) {
+      top: 1rem;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:nth-child(3) {
+      bottom: 1rem;
+    }
+  }
+
+  &__burger:active &__burger-row {
+    background-color: var(--color__pink-1);
+  }
+
+  &__burger.--is-active &__burger-row {
+    &:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: 50%;
+      left: 50%;
+      right: 50%;
+      bottom: 50%;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      top: 50%;
+      left: 50%;
+      right: 50%;
+      bottom: 50%;
+    }
+  }
+
+  &__mobile-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    backdrop-filter: blur(2rem);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -1rem 0 1rem var(--color__shadow-4);
+    height: 100vh;
+    padding: 5rem 2rem 2rem;
+  }
+
+  &__menu-wrapper {
+    margin-top: 2rem;
+  }
+
+  &__menu-mobile {
+    flex-direction: column;
+    align-items: flex-end;
   }
 }

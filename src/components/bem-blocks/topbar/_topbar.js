@@ -28,3 +28,24 @@ function topbar() {
 }
 
 topbar();
+
+function topbarBurger() {
+  const buttons = document.querySelectorAll('.topbar__burger');
+  const menu = document.querySelector('.topbar__mobile-menu');
+  const menuBar = document.querySelector('.topbar.--header');
+
+  buttons.forEach(el => el.addEventListener('click', burgerHandler));
+
+  function burgerHandler(e) {
+    if (e.currentTarget.classList.contains('--is-active')) {
+      buttons.forEach(el => el.classList.remove('--is-active'));
+      menuBar.removeAttribute('style');
+    } else {
+      buttons.forEach(el => el.classList.add('--is-active'));
+      menuBar.style.backdropFilter = "none";
+      menuBar.style.backgroundColor = "rgba(255,255,255,0)";
+      menuBar.style.zIndex = 30;
+    }
+  }
+}
+topbarBurger();

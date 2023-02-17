@@ -1,13 +1,27 @@
 .header {
   min-height: 100vh;
-  padding: 4rem 0;
 
-  &__inner {}
+  // padding: 4rem 0;
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 4rem;
+  }
+
+  &__inner {
+    @media screen and (max-width: 1023px) {
+      flex-direction: column-reverse;
+    }
+  }
 
   &__content {
     flex: 0 1 45rem;
     position: relative;
     z-index: 2;
+    user-select: none;
+
+    @media screen and (max-width: 1023px) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
   }
 
   &__title {}
@@ -23,6 +37,11 @@
   &__pic,
   &__video-wrapper {
     flex: 0 1 45rem;
+
+    @media screen and (max-width: 1023px) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
   }
 
   &__image {
