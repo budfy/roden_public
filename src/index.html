@@ -9,6 +9,7 @@
 
 <body>
   <div class="page-wrapper">
+    @@include('components/bem-blocks/mobile-menu/_mobile-menu.html')
     <div class="page-bg">
       <div class="page-bubble page-bubble-1">
         <div class="page-bubble-inner"></div>
@@ -23,12 +24,12 @@
     <div class="page-inner">
       @@include('components/page-blocks/header/_header.html')
       <main class="main">
-        @@include('components/bem-blocks/topbar/_topbar.html',{"class":"--main"})
-        @@include('components/page-blocks/methods/_methods.html')
-        @@include('components/page-blocks/cases/_cases.html')
+        <!-- @@include('components/bem-blocks/topbar/_topbar.html',{"class":"--main"}) -->
+        <!-- @@include('components/page-blocks/methods/_methods.html') -->
+        <!-- @@include('components/page-blocks/cases/_cases.html') -->
       </main>
     </div>
-    @@include('components/page-blocks/footer/_footer.html')
+    <!-- @@include('components/page-blocks/footer/_footer.html') -->
   </div>
   @@include('components/page-blocks/_scripts.html')
 </body>

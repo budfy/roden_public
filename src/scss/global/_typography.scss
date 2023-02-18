@@ -4,6 +4,10 @@
   color: var(--color__black-1);
   font-size: $size+rem;
   margin: 0;
+
+  @media screen and (max-width: 639px) {
+    font-size: calc($size / 2) + rem;
+  }
 }
 
 h1,
