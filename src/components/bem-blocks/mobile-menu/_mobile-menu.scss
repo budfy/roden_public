@@ -18,6 +18,7 @@
   @media screen and (max-width: 991px) {
     display: flex;
     flex-direction: column;
+    min-width: 60vw;
   }
 
   &__close {
