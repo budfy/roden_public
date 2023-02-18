@@ -1,7 +1,11 @@
-name: CI -> Deploy to My website
+name: CI -> Deploy to Test
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - develop
+      - 'feature/**'
+      - 'hotfix/**'
+      - 'relese/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,10 +15,10 @@ jobs:
       - name: Upload from docs via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: tzk301.nic.ua
-          user: gulpFtpPublisher@mvikna.in.ua
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: q1.cityhost.com.ua
+          user: chc214115c_roden-prev
+          password: ${{ secrets.FTP_PASSWORD_PREV }}
           local_dir: "./docs"
-          remote_dir: "/public_html"
+          remote_dir: "./"
           delete: "true"
           max_retries: "7"

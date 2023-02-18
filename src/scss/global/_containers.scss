@@ -1,0 +1,36 @@
+.container {
+  --mwidth: 1792px;
+  height: 100%;
+  width: 100%;
+  padding: 0 var(--padding);
+  max-width: calc(var(--mwidth) + (var(--padding) * 2));
+  margin: 0 auto;
+
+  @media screen and (min-width: 1024px) {
+    --padding: 4rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    --padding: 2.5rem;
+  }
+
+  @media screen and (max-width: 639px) {
+    --padding: 1.25rem;
+  }
+
+  &.--base {
+    --mwidth: 1376px;
+  }
+
+  &.--left {
+    padding-left: 0;
+    margin-left: 0;
+    max-width: calc(var(--mwidth) + var(--padding) + ((100vw - var(--mwidth)) / 2));
+  }
+
+  &.--right {
+    padding-right: 0;
+    margin-right: 0;
+    max-width: calc(var(--mwidth) + var(--padding) + ((100vw - var(--mwidth)) / 2));
+  }
+}
