@@ -10,6 +10,10 @@
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 0;
 
+  @media screen and (max-width: 639px) {
+    padding: 1rem 0;
+  }
+
   &.--header {
     position: relative;
     top: auto;
@@ -34,6 +38,11 @@
     @media screen and (max-width: 991px) {
       height: 6rem;
       width: 6rem;
+    }
+
+    @media screen and (max-width: 639px) {
+      height: 3rem;
+      width: 3rem;
     }
   }
 

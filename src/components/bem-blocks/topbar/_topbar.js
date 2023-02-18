@@ -8,7 +8,7 @@ function topbar() {
     // } else {
     //   document.querySelector('.topbar').style.transform = 'translateY(-100%)';
     // }
-    if (currentScrollPos >= screenHeight) {
+    if (currentScrollPos >= screenHeight && document.querySelector('.topbar.--main')) {
       document.querySelector('.topbar.--main .topbar__logo').style.width = "3.5rem";
       document.querySelector('.topbar.--main .topbar__logo').style.height = "3.5rem";
       document.querySelector('.topbar.--main').style.padding = "0.75rem 0";
@@ -16,7 +16,7 @@ function topbar() {
       document.querySelector('.topbar.--main').style.pointerEvents = "all";
       document.querySelector('.topbar.--main').style.boxShadow = "0 0.5rem 1.25rem rgba(0, 0, 0, 0.25)";
       document.querySelector('.topbar.--main .topbar__wrapper').style.alignItems = "center";
-    } else if (currentScrollPos < screenHeight) {
+    } else if (currentScrollPos < screenHeight && document.querySelector('.topbar.--main')) {
       document.querySelector('.topbar.--main').style.opacity = 0;
       document.querySelector('.topbar.--main').style.pointerEvents = "none";
       document.querySelector('.topbar.--main, .topbar.--main .topbar__logo, .topbar__wrapper').removeAttribute("style");
