@@ -12,8 +12,7 @@
 
 .page-bubble {
   position: absolute;
-  top: 0;
-  left: 0;
+
   height: 30rem;
   width: 30rem;
   transition: all ease-in-out 10s;
@@ -33,16 +32,22 @@
 .page-bubble-1 {
   --bg: radial-gradient(37.34% 37.34% at 32.84% 62.66%, rgba(0, 165, 255, 0.72) 0%, rgba(32, 176, 255, 0) 100%);
   filter: blur(3rem);
+  top: 0;
+  left: 0;
 }
 
 .page-bubble-2 {
   --bg: radial-gradient(37.34% 37.34% at 32.84% 62.66%, rgba(185, 81, 255, 0.72) 0%, rgba(185, 81, 255, 0) 100%);
   filter: blur(3rem);
+  top: 70%;
+  left: 35%;
 }
 
 .page-bubble-3 {
   --bg: radial-gradient(37.34% 37.34% at 32.84% 62.66%, rgba(255, 16, 16, 0.56) 0%, rgba(255, 0, 0, 0) 100%, rgba(255, 0, 0, 0) 100%);
   filter: blur(3rem);
+  top: 35%;
+  left: 80%;
 }
 
 .page-bubble-inner {
