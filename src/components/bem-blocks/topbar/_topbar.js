@@ -30,22 +30,33 @@ function topbar() {
 topbar();
 
 function topbarBurger() {
-  const buttons = document.querySelectorAll('.topbar__burger');
+  const buttonsOpen = document.querySelectorAll('.topbar__burger');
+  const buttonClose = document.querySelector('.mobile-menu__close');
   const menu = document.querySelector('.mobile-menu');
   const menuBar = document.querySelector('.topbar.--header');
+  const menuItem = document.querySelectorAll('.mobile-menu .menu__link, .mobile-menu .mobile-menu__icon-link');
 
-
-  buttons.forEach(el => el.addEventListener('click', burgerHandler));
+  buttonsOpen.forEach(el => el.addEventListener('click', menuOpen));
+  buttonClose.addEventListener('click', menuClose)
+  menuItem.forEach(el => el.addEventListener('click', menuClose))
 
   function burgerHandler(e) {
     if (e.currentTarget.classList.contains('--is-active')) {
-      buttons.forEach(el => el.classList.remove('--is-active'));
-      menuBar.removeAttribute('style');
-      menu.removeAttribute('style')
+      menuClose()
     } else {
-      buttons.forEach(el => el.classList.add('--is-active'));
-      menu.style.transform = "translateX(0)";
+      menuOpen()
     }
+  }
+
+  function menuOpen() {
+    buttonsOpen.forEach(el => el.classList.add('--is-active'));
+    menu.style.transform = "translateX(0)";
+  }
+
+  function menuClose() {
+    buttonsOpen.forEach(el => el.classList.remove('--is-active'));
+    menuBar.removeAttribute('style');
+    menu.removeAttribute('style');
   }
 }
 topbarBurger();

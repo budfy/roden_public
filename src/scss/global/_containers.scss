@@ -7,6 +7,14 @@
   max-width: calc(var(--mwidth) + (var(--padding) * 2));
   margin: 0 auto;
 
+  @media screen and (max-width: 1023px) {
+    --padding: 2.5rem;
+  }
+
+  @media screen and (max-width: 639px) {
+    padding: 1.25rem;
+  }
+
   &.--base {
     --mwidth: 1376px;
   }
