@@ -26,7 +26,13 @@
     }
   }
 
-  &__title {}
+  &__title {
+    min-height: 2em;
+
+    @media screen and (max-width: 767px) {
+      min-height: 3em;
+    }
+  }
 
   &__text {
     margin-top: 0.5rem;
