@@ -1,0 +1,51 @@
+.adventure {
+  margin-top: 80px;
+}
+
+.adventure__wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.adventure__title {
+  text-align: center;
+}
+
+.adventure__list-title {
+  text-align: center;
+  color: var(--color__black-2);
+  display: block;
+  margin-top: 72px;
+  margin-bottom: 47px;
+}
+
+.adventure__list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+}
+/*карточке поставил высоту больше чем на макете бо текст не помещаеться*/
+.cart-adventure {
+  width: 408px;
+  height: 425px;
+  
+  padding: 24px 41px;
+  background: linear-gradient(0deg, #ffffff, #ffffff),
+    linear-gradient(180deg, #ffffff 0%, #cfd7d3 100%);
+  box-shadow: 0px 8px 48px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--color__black-1);
+  margin: 32px;
+}
+
+.cart-adventure__image {
+  width: 357px;
+  height: 205px;
+}
+
+.cart-adventure__title {
+    display: block;
+    margin-bottom: 20px;
+}
