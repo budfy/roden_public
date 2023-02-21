@@ -1,0 +1,68 @@
+.acordion__wrapper {
+    margin-top: 60px;
+}
+
+.acordion__title {
+    color: var(--color__black-1);
+}
+/* стили аккордиона*/
+.accordion {
+    width: 700px;
+}
+
+.accordion__item {
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 15%);
+  }
+  
+  .accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-weight: 500;
+    background-color: #0d6efd;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+  }
+  
+  .accordion__header::after {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    margin-left: auto;
+    background-image: url("./svg/plus.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    transition: transform 0.2s ease-out;
+  }
+  
+  .accordion__item_show .accordion__header::after,
+  .accordion__item_slidedown .accordion__header::after {
+    transform: rotate(-180deg);
+  }
+  
+  .accordion__header:hover {
+    background-color: blue;
+  }
+  
+  .accordion__item:not(.accordion__item_show) .accordion__header {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+  
+  .accordion__content {
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+  
+  .accordion__item:not(.accordion__item_show) .accordion__body {
+    display: none;
+  }
