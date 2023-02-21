@@ -1,0 +1,44 @@
+.messengers {
+  margin-top: 5.5rem;
+
+  &__wrapper {
+    background: linear-gradient(0deg, #ffffff, #ffffff),
+      linear-gradient(180deg, #ffffff 0%, #cfd7d3 100%);
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    margin-top: 10rem;
+    text-align: center;
+    padding: 5rem 0 3.5rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__list {
+    list-style: none;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__list-item {
+    &+& {
+      margin-left: 1.25rem;
+    }
+  }
+}
+
+/*фон копировал с макета могу ошибаться*/
+
+
+
+
+/*
+1920 - стандарт
+1366 - ноутбук
+1199 - промежуточный
+1099 - промежуточный
+1023 - планшет
+991 - большой тел.
+767 - средний тел.
+639 - маленький тел
+
+*/
