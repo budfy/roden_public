@@ -1,40 +1,15 @@
-<div class="acordion__wrapper">
-    <div class="container flex --just-space">
-        <h4 class="acordion__title --h5">Ми можемо стати в нагоді коли Вам потрібно:</h4>
-        <div class="accordion">
-            <div class="accordion__item accordion__item_show">
-              <div class="accordion__header --h5">
-                Дизайн-аудит готового бізнесу
-              </div>
-              <div class="accordion__body">
-                Содержимое 1
-              </div>
-            </div>
-            <div class="accordion__item">
-              <div class="accordion__header --h5">
-                Проектування нового продукту або MVP
-              </div>
-              <div class="accordion__body">
-              Содержимое 2
-              </div>
-            </div>
-            <div class="accordion__item">
-                <div class="accordion__header --h5">
-                    Розробка по вашому ТЗ
-                </div>
-                <div class="accordion__body">
-                Содержимое 2
-                </div>
-              </div>
-              <div class="accordion__item">
-                <div class="accordion__header --h5">
-                    Власний дизайн відділ
-                </div>
-                <div class="accordion__body">
-                Содержимое 2
-                </div>
-              </div>
-            
-          </div>
+<!-- SECTION: accordion -->
+<section class="accordion">
+  <div class="container --base">
+    <div class="accordion__inner flex --just-space">
+      <h2 class="accordion__title --h4">Ми можемо стати в нагоді коли Вам потрібно:</h2>
+      <div class="accordion__wrapper">
+        @@include('../../bem-blocks/question/_question-1.html')
+        @@include('../../bem-blocks/question/_question-2.html')
+        @@include('../../bem-blocks/question/_question-3.html')
+        @@include('../../bem-blocks/question/_question-4.html')
+      </div>
     </div>
-</div>
+  </div>
+</section>
+<!-- !SECTION: accordion -->
