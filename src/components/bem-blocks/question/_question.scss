@@ -7,10 +7,14 @@
     @include no-btn;
     text-align: left;
     width: 100%;
-    padding: 1.25rem 1.5rem;
+    padding: 1.25em 3.5em 1.25em 1.5em;
     position: relative;
     color: var(--color__black-1);
     transition: all ease-in-out 0.25s;
+
+    @media screen and (max-width: 639px) {
+      font-size: 0.75rem;
+    }
 
     &::before,
     &::after {
@@ -19,9 +23,9 @@
       display: block;
       background-color: var(--color__black-2);
       height: 1px;
-      width: 1rem;
-      top: 2rem;
-      right: 2rem;
+      width: 1em;
+      top: 2em;
+      right: 2em;
       transition: all ease-in-out 0.25s;
     }
 
@@ -31,16 +35,17 @@
 
     &:hover::after,
     &:hover::before {
-      background-color: var(--color__pink-1);
+      background-color: var(--color__purple);
     }
 
     &:hover {
-      color: var(--color__pink-1);
+      color: var(--color__purple);
     }
   }
 
   &__title-text {
     color: inherit;
+
   }
 
   &__content-wrapper {
@@ -50,7 +55,11 @@
   }
 
   &__content-inner {
-    padding: 0 1.5rem 1.25rem;
+    padding: 0 1.5em 1.25em;
+
+    @media screen and (max-width: 639px) {
+      font-size: 0.75rem;
+    }
   }
 
   &__content-text {
