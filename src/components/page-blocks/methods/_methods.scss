@@ -1,22 +1,54 @@
 .methods {
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+
+  & .container {
+    @media screen and (max-width: 1199px) {
+      padding: 0 var(--padding);
+      max-width: calc(var(--mwidth) + (var(--padding) * 2));
+    }
+  }
 
   &__wrapper {
     width: calc(100% + 3rem);
     padding: 0 3rem 0 0;
     margin-left: -3rem;
     overflow: clip;
+
+    @media screen and (max-width: 1199px) {
+      overflow: visible;
+      margin-left: 0;
+      width: auto;
+      padding: 0;
+    }
   }
 
   &__inner {
     margin-right: -5rem;
     padding: 3rem;
     overflow-x: auto;
+
+    @media screen and (max-width: 1199px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+      margin: 0;
+      padding: 0;
+      overflow-x: visible;
+    }
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     &+& {
       margin-left: 2rem;
+
+      @media screen and (max-width: 1199px) {
+        margin-left: 0;
+      }
     }
   }
 }
