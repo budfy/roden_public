@@ -1,16 +1,28 @@
 .messengers {
   margin-top: 5.5rem;
 
+  & .container.--base {
+    @media screen and (max-width: 639px) {
+      --padding: 0;
+    }
+  }
+
   &__wrapper {
     background: linear-gradient(0deg, #ffffff, #ffffff),
       linear-gradient(180deg, #ffffff 0%, #cfd7d3 100%);
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.25);
     border-radius: 0.5rem;
-    margin-top: 10rem;
+    margin-top: 6rem;
     text-align: center;
-    padding: 5rem 0 3.5rem 0;
+    padding: 5rem 2rem 3.5rem 0;
     position: relative;
     z-index: 1;
+
+    @media screen and (max-width: 639px) {
+      border-radius: 0;
+      margin-top: 3rem;
+      padding: 1.5rem 1.25rem;
+    }
   }
 
   &__list {
@@ -22,6 +34,12 @@
   &__list-item {
     &+& {
       margin-left: 1.25rem;
+    }
+  }
+
+  &__list-link {
+    @media screen and (max-width: 639px) {
+      font-size: 0.75rem;
     }
   }
 }
