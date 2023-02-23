@@ -22,6 +22,16 @@
     --mwidth: 1376px;
   }
 
+  &.--slim {
+    --mwidth: 1152px;
+  }
+
+  &.--x-slim {
+    --mwidth: 848px;
+    --padding: 0;
+    max-width: 53rem;
+  }
+
   &.--left {
     padding-left: 0;
     margin-left: 0;
