@@ -2,6 +2,11 @@
   position: relative;
   z-index: 1;
   margin-top: 5rem;
+  margin-bottom: -2rem;
+
+  @media screen and (max-width: 639px) {
+    margin-bottom: 0;
+  }
 
   & .container.--base {
     @media screen and (max-width: 639px) {
