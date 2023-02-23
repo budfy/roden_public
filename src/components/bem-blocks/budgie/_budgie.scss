@@ -30,4 +30,11 @@
   &:active {
     box-shadow: 0 0.5em 3em var(--color__shadow-2);
   }
+
+  &:disabled,
+  &.--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
 }

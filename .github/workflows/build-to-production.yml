@@ -1,0 +1,21 @@
+name: CI -> Deploy to Prod
+on:
+  push:
+    branches: 
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Here is the deployment action
+      - name: Upload from docs via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: leaf.cityhost.com.ua
+          user: ch38e6a975_roden-publ
+          password: ${{ secrets.FTP_PASSWORD_PUBL }}
+          local_dir: "./docs"
+          remote_dir: "./"
+          delete: "true"
+          max_retries: "7"

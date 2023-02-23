@@ -1,5 +1,4 @@
 .container {
-  --padding: 4rem;
   --mwidth: 1792px;
   height: 100%;
   width: 100%;
@@ -7,8 +6,30 @@
   max-width: calc(var(--mwidth) + (var(--padding) * 2));
   margin: 0 auto;
 
+  @media screen and (min-width: 1024px) {
+    --padding: 4rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    --padding: 2.5rem;
+  }
+
+  @media screen and (max-width: 639px) {
+    --padding: 1.25rem;
+  }
+
   &.--base {
     --mwidth: 1376px;
+  }
+
+  &.--slim {
+    --mwidth: 1152px;
+  }
+
+  &.--x-slim {
+    --mwidth: 848px;
+    --padding: 0;
+    max-width: 53rem;
   }
 
   &.--left {

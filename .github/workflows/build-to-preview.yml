@@ -1,4 +1,4 @@
-name: CI -> Deploy to My website
+name: CI -> Deploy to Test
 on:
   push:
     branches: 
@@ -15,9 +15,9 @@ jobs:
       - name: Upload from docs via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: q1.cityhost.com.ua
-          user: chc214115c_github
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: leaf.cityhost.com.ua
+          user: ch38e6a975_roden-prev
+          password: ${{ secrets.FTP_PASSWORD_PREV }}
           local_dir: "./docs"
           remote_dir: "./"
           delete: "true"

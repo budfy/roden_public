@@ -1,0 +1,32 @@
+.accordion {
+  margin-top: 6.75rem;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    color: var(--color__black-2);
+  }
+
+  &__wrapper {
+    flex: 0 0 50%;
+    margin-left: 2rem;
+
+    @media screen and (max-width: 991px) {
+      margin-left: 0;
+      margin-top: 3rem;
+    }
+  }
+
+  &__item {
+    &+& {
+      margin-top: 1.5rem;
+    }
+  }
+}
