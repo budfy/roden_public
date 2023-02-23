@@ -1,11 +1,8 @@
-name: CI -> Deploy to Test
+name: CI -> Deploy to Prod
 on:
   push:
     branches: 
-      - develop
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'relese/**'
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,9 +12,9 @@ jobs:
       - name: Upload from docs via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: q1.cityhost.com.ua
-          user: chc214115c_roden-prev
-          password: ${{ secrets.FTP_PASSWORD_PREV }}
+          server: leaf.cityhost.com.ua
+          user: ch38e6a975_roden-publ
+          password: ${{ secrets.FTP_PASSWORD_PUBL }}
           local_dir: "./docs"
           remote_dir: "./"
           delete: "true"
