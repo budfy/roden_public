@@ -1,0 +1,28 @@
+.advantages {
+  margin-top: 5rem;
+  position: relative;
+  z-index: 1;
+
+  &__wrapper {}
+
+  &__title {
+    text-align: center;
+  }
+
+  &__list-title {
+    text-align: center;
+    color: var(--color__black-2);
+    display: block;
+    margin-top: 4.5rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3.25rem;
+    grid-column-gap: 2rem;
+    margin-top: 2.75rem;
+  }
+
+  &__list-item {}
+}
