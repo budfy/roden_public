@@ -16,7 +16,7 @@ jobs:
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: leaf.cityhost.com.ua
-          user: ch38e6a975_roden-publ
+          user: ch38e6a975_roden-prev
           password: ${{ secrets.FTP_PASSWORD_PREV }}
           local_dir: "./docs"
           remote_dir: "./"
