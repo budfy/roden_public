@@ -3,14 +3,25 @@
   background: linear-gradient(0deg, var(--color__back), var(--color__back)),
     linear-gradient(180deg, var(--color__back) 0%, var(--color__grey-1) 100%);
   box-shadow: 0 0.5rem 3rem var(--color__shadow-4);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   text-align: center;
   color: var(--color__black-1);
 
-  &__image {}
-
-  &__title {
+  &__pic {
     display: block;
-    margin-bottom: 20px;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__title {}
+
+  &__text {
+    margin-top: 1.25rem;
+    max-width: 100%;
   }
 }
