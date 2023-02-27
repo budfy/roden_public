@@ -5,7 +5,7 @@ on:
       - develop
       - 'feature/**'
       - 'hotfix/**'
-      - 'relese/**'
+      - 'release/**'
 jobs:
   build:
     runs-on: ubuntu-latest
