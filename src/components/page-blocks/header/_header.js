@@ -9,4 +9,18 @@ function headerType() {
     loopCount: Infinity,
   });
 }
-headerType()
+headerType();
+
+function resizeVideo() {
+  const video = document.querySelector('.header__video');
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 1024) {
+    video.setAttribute('src', 'video/roden_400x300_30.mp4');
+  } else if (screenWidth < 1366) {
+    video.setAttribute('src', 'video/roden_600x450_30.mp4')
+  } else {
+    video.setAttribute('src', 'video/roden_800x600_30.mp4');
+  }
+}
+resizeVideo();
