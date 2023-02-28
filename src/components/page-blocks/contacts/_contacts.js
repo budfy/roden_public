@@ -18,7 +18,7 @@ function contactsForm() {
       })
       .then(response => {
         // Обробляємо відповідь сервера
-        console.log(response.body);
+        console.log(response);
       })
       .catch(error => {
         // Обробляємо помилки відправки запиту
