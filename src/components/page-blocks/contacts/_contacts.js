@@ -27,4 +27,4 @@ function contactsForm() {
   }
 }
 
-contactsForm()
+contactsForm();
