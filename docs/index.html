@@ -41,9 +41,9 @@
           href="img/favicons/favicon.png"
           type="image/x-icon">
     <link rel="stylesheet"
-          href="css/libs.min.css?_v=20230228095124">
+          href="css/libs.min.css?_v=20230228114348">
     <link rel="stylesheet"
-          href="css/style.min.css?_v=20230228095124">
+          href="css/style.min.css?_v=20230228114348">
     <title>Roden - студія веб-дизайну.</title>
   </head>
 
@@ -416,7 +416,7 @@ Behance</a>
 Dribble</a>
         </div>
       </div>
-      <form class="contacts__form">
+      <form class="contacts__form" enctype="multipart/form-data">
         <p class="contacts__form-title --h4">Поговоріть з нами про свої проблеми, завдання та цілі</p>
         <div class="contacts__form-item input">
           <label for="contacts__name"
@@ -428,7 +428,7 @@ Dribble</a>
                  required>
         </div>
         <div class="contacts__form-item input">
-          <label for=""
+          <label for="contacts__link"
                  class="input__label">E-mail/Facebook/Telegram/ будь-який зручний спосіб зв'язку*</label>
           <input type="text"
                  class="input__field"
@@ -438,10 +438,18 @@ Dribble</a>
         </div>
         <div class="contacts__form-item input">
           <label for="contacts__text"
-                 class="input__label">Опишіть завдання</label>
+                 class="input__label">Опишіть завдання або прикріпіть файл нижче.</label>
           <textarea class="input__field"
                     id="contacts__text"
                     name="text"></textarea>
+        </div>
+        <div class="contacts__form-item input">
+          <label for="contacts__file"
+                 class="input__label">E-mail/Facebook/Telegram/ будь-який зручний спосіб зв'язку*</label>
+          <input type="file"
+                 class="input__field"
+                 id="contacts__file"
+                 name="file">
         </div>
         <button class="contacts__form-btn button"
                 type="submit">Надіслати</button>
@@ -482,8 +490,8 @@ Dribble</a>
 </footer>
 
   </div>
-  <script src="js/libs.min.js?_v=20230228095124"></script>
-<script src="js/main.min.js?_v=20230228095124"></script>
+  <script src="js/libs.min.js?_v=20230228114348"></script>
+<script src="js/main.min.js?_v=20230228114348"></script>
 
 </body>
 

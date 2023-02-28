@@ -1,4 +1,4 @@
-const plugins = ["node_modules/typed.js/lib/typed.js"];
+const plugins = ["node_modules/typed.js/lib/typed.js", "node_modules/axios/dist/axios.js"];
 const {
   src,
   dest
