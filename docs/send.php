@@ -33,11 +33,11 @@ function sendEmail($formData) {
     // send email
     if (mail($toEmail, $subject, $message, $headers)) {
       echo "<script>"
-        echo "console.log(\"Повідомлення успішно надіслано.\")";
+        echo "console.log('Повідомлення успішно надіслано.')";
       echo "</script>"
     } else {
       echo "<script>"
-        echo "console.log(\"Помилка відправлення повідомлення.\")";
+        echo "console.log('Помилка відправлення повідомлення.')";
       echo "</script>"
     }
 }
