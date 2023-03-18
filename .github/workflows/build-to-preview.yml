@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
         - name: Clean FTP
+        - uses: actions/checkout@v2
           uses: StephanThierry/ftp-delete-action@/v2.1
           with:
             host: leaf.cityhost.com.ua
@@ -23,6 +23,7 @@ jobs:
             ignoreSSL: "1"
         # Here is the deployment action
         - name: Upload from docs via FTP
+        - uses: actions/checkout@v2
           uses: airvzxf/ftp-deployment-action@latest
           with:
             server: leaf.cityhost.com.ua
