@@ -8,8 +8,7 @@ function contactsForm() {
 
     // Отримуємо дані з форми
     const form = event.target;
-    const formData = new FormData(form);
-    console.log(formData);
+    const formData = collectFormData(form);
     // Відправляємо POST-запит за допомогою Axios
     axios.post('./send.php', formData, {
         headers: {
@@ -25,6 +24,29 @@ function contactsForm() {
         console.error(error);
       });
   }
+
+  function collectFormData(form) {
+    const inputs = form.querySelectorAll('input, textarea');
+    let data = new Object();
+    inputs.forEach(async el => {
+      if (el.value !== "") {
+        if (el.type !== "file") {
+          data[el.name] = el.value;
+        } else {
+          data["file"] = await getBase64(el.files[0]);
+        }
+      }
+    });
+    console.dir(data);
+    return data;
+  }
+
+  const getBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
 }
 
 contactsForm();
