@@ -9,7 +9,7 @@ function contactsForm() {
     // Отримуємо дані з форми
     const form = event.target;
     const formData = new FormData(form);
-    // console.log(formData);
+    console.log(formData);
     // Відправляємо POST-запит за допомогою Axios
     axios.post('./send.php', formData, {
         headers: {
@@ -19,7 +19,6 @@ function contactsForm() {
       .then(response => {
         // Обробляємо відповідь сервера
         console.log(response);
-        console.log(response.data);
       })
       .catch(error => {
         // Обробляємо помилки відправки запиту
