@@ -18,18 +18,36 @@ foreach ( $_POST as $key => $value ) {
     // }
 }
 
+if ( str_starts_with($_FILES["file"]["type"],"image") ){
+    $getQuery = array(
+    "chat_id"   => TG_CHAT,
+    'text'      => $textMessage,
+    "parse_mode"=> "html"
+  );
+}
+elseif ($_FILES["file"]["error"]==0) {
+  $getQuery = array(
+    "chat_id"   => TG_CHAT,
+    'text'      => $textMessage,
+    "parse_mode"=> "html"
+  );
+}
+else{
+  $getQuery = array(
+    "chat_id"   => TG_CHAT,
+    'text'      => $textMessage,
+    "parse_mode"=> "html"
+  );
+  }
+
 // if (strlen($textMessage) < 200) {
 //      send one request
 // } else {
 //     send 2 request
 // }
-// if ($_POST["file"] != ""){}
 
-$getQuery = array(
-"chat_id"   => TG_CHAT,
-'text'      => $textMessage,
-"parse_mode"=> "html"
-);
+
+
 
 function curl($url, $data = [], $method = 'POST', $options = [])
 {

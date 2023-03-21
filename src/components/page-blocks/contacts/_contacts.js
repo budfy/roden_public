@@ -11,7 +11,10 @@ function contactsForm() {
     const formData = new FormData(form);
     let timestamp = new Date();
     formData.append('Дата', timestamp.toLocaleString("UA-uk"));
-    formData.append('file', form.querySelector('input[type=file]').files[0])
+    // formData.append('file', form.querySelector('input[type=file]').files[0]);
+    for (const val of formData.values()) {
+      console.log(val);
+    }
     // Відправляємо POST-запит за допомогою Axios
     axios.post('./send.php', formData, {
         headers: {
@@ -35,3 +38,10 @@ function contactsForm() {
 }
 
 contactsForm();
+
+function textareaAutoHeight() {
+  const ta = document.querySelector("textarea");
+  autosize(ta);
+}
+
+textareaAutoHeight();
