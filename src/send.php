@@ -6,15 +6,24 @@ ini_set('display_startup_errors', 1);
 define("TG_TOKEN","5959828748:AAGfflaaL0ar2r4Jn2Mih1g0SGlECqfortM");
 define("TG_CHAT","-646211857");
 
-$url = "https://api.telegram.org/bot" . TG_TOKEN . "/sendMessage";
+$tg_method = "sendMessage";
+
+$url = "https://api.telegram.org/bot" . TG_TOKEN . "/" . $tg_method;
 
 $textMessage = "";
 
 foreach ( $_POST as $key => $value ) {
-  if ( $key != "file"){
+  // if ( $key != "file"){
     $textMessage .= "<b>$key:</b> $value\n";
-    }
+    // }
 }
+
+// if (strlen($textMessage) < 200) {
+//      send one request
+// } else {
+//     send 2 request
+// }
+// if ($_POST["file"] != ""){}
 
 $getQuery = array(
 "chat_id"   => TG_CHAT,
@@ -22,17 +31,7 @@ $getQuery = array(
 "parse_mode"=> "html"
 );
 
-
-
-// $ch = curl_init("https://api.telegram.org/bot". TG_TOKEN ."/sendMessage?".http_build_query($getQuery));
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-// curl_setopt($ch, CURLOPT_HEADER, false);
-
-// $resultQuery = curl_exec($ch);
-// curl_close($ch);
-
-function curl($url, $data = [], $method = 'GET', $options = [])
+function curl($url, $data = [], $method = 'POST', $options = [])
 {
     $default_options = [
         CURLOPT_RETURNTRANSFER => true,

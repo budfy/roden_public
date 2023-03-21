@@ -8,7 +8,10 @@ function contactsForm() {
 
     // Отримуємо дані з форми
     const form = event.target;
-    const formData = collectFormData(form);
+    const formData = new FormData(form);
+    let timestamp = new Date();
+    formData.append('Дата', timestamp.toLocaleString("UA-uk"));
+    formData.append('file', form.querySelector('input[type=file]').files[0])
     // Відправляємо POST-запит за допомогою Axios
     axios.post('./send.php', formData, {
         headers: {
@@ -17,36 +20,18 @@ function contactsForm() {
       })
       .then(response => {
         // Обробляємо відповідь сервера
-        console.log(response);
+        if (!response.data.ok) {
+          console.warn(response);
+          console.table(response.data);
+        }
+        // console.log(response);
+        return true;
       })
       .catch(error => {
         // Обробляємо помилки відправки запиту
         console.error(error);
       });
   }
-
-  function collectFormData(form) {
-    const inputs = form.querySelectorAll('input, textarea');
-    let data = new Object();
-    inputs.forEach(async el => {
-      if (el.value !== "") {
-        if (el.type !== "file") {
-          data[el.name] = el.value;
-        } else {
-          data["file"] = await getBase64(el.files[0]);
-        }
-      }
-    });
-    console.dir(data);
-    return data;
-  }
-
-  const getBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
 }
 
 contactsForm();
