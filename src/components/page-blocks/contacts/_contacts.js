@@ -28,6 +28,7 @@ function contactsForm() {
           console.table(response.data);
         }
         // console.log(response);
+        form.reset();
         return true;
       })
       .catch(error => {
