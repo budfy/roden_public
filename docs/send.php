@@ -3,82 +3,90 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-define("TG_TOKEN","5959828748:AAGfflaaL0ar2r4Jn2Mih1g0SGlECqfortM");
-define("TG_CHAT","-646211857");
+// Токен
+  const TOKEN = '5959828748:AAGfflaaL0ar2r4Jn2Mih1g0SGlECqfortM';
+ 
+  // ID чата
+  const CHATID = '-646211857';
+ 
+  // Массив допустимых значений типа файла.
+  $types = array('image/gif', 'image/png', 'image/jpeg', 'application/pdf');
+ 
+  // Максимальный размер файла в килобайтах
+  // 1048576; // 1 МБ
+  $size = 1073741824; // 1 ГБ
+ 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ 
+  $fileSendStatus = '';
+  $textSendStatus = '';
+  $msgs = [];
+   
+  // Проверяем не пусты ли поля с именем и телефоном
+  if ($_POST["Ім'я"]) {
+     
+    // Если не пустые, то валидируем эти поля и сохраняем и добавляем в тело сообщения. Минимально для теста так:
+    $txt = "";
+     
+    foreach ( $_POST as $key => $value ) {
+      if ( $key != "file"){
+        $txt .= "-----------------------------%0A";
+        $txt .= "<b>$key:</b> %0A$value%0A";
+        }
+    }
+        $txt .= "-----------------------------%0A";
 
-$tg_method = "sendMessage";
-
-$url = "https://api.telegram.org/bot" . TG_TOKEN . "/" . $tg_method;
-
-$textMessage = "";
-
-foreach ( $_POST as $key => $value ) {
-  // if ( $key != "file"){
-    $textMessage .= "<b>$key:</b> $value\n";
-    // }
-}
-
-if ( str_starts_with($_FILES["file"]["type"],"image") ){
-    $getQuery = array(
-    "chat_id"   => TG_CHAT,
-    'text'      => $textMessage,
-    "parse_mode"=> "html"
-  );
-}
-elseif ($_FILES["file"]["error"]==0) {
-  $getQuery = array(
-    "chat_id"   => TG_CHAT,
-    'text'      => $textMessage,
-    "parse_mode"=> "html"
-  );
-}
-else{
-  $getQuery = array(
-    "chat_id"   => TG_CHAT,
-    'text'      => $textMessage,
-    "parse_mode"=> "html"
-  );
+    $textSendStatus = @file_get_contents('https://api.telegram.org/bot'. TOKEN .'/sendMessage?chat_id=' . CHATID . '&parse_mode=html&text=' . $txt); 
+ 
+    if( isset(json_decode($textSendStatus)->{'ok'}) && json_decode($textSendStatus)->{'ok'} ) {
+      if (!empty($_FILES['files']['tmp_name'])) {
+     
+          $urlFile =  "https://api.telegram.org/bot" . TOKEN . "/sendDocument";
+           
+          // Путь загрузки файлов
+          $path = $_SERVER['DOCUMENT_ROOT'] . '/telegramform/tmp/';
+           
+          // Загрузка файла и вывод сообщения
+          $mediaData = [];
+          $postContent = [
+            'chat_id' => CHATID,
+          ];
+       
+          for ($ct = 0; $ct < count($_FILES['files']['tmp_name']); $ct++) {
+            if ($_FILES['files']['name'][$ct] && @copy($_FILES['files']['tmp_name'][$ct], $path . $_FILES['files']['name'][$ct])) {
+              if ($_FILES['files']['size'][$ct] < $size && in_array($_FILES['files']['type'][$ct], $types)) {
+                $filePath = $path . $_FILES['files']['name'][$ct];
+                $postContent[$_FILES['files']['name'][$ct]] = new CURLFile(realpath($filePath));
+                $mediaData[] = ['type' => 'document', 'media' => 'attach://'. $_FILES['files']['name'][$ct]];
+              }
+            }
+          }
+       
+          $postContent['media'] = json_encode($mediaData);
+       
+          $curl = curl_init();
+          curl_setopt($curl, CURLOPT_HTTPHEADER, ["Content-Type:multipart/form-data"]);
+          curl_setopt($curl, CURLOPT_URL, $urlFile);
+          curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+          curl_setopt($curl, CURLOPT_POSTFIELDS, $postContent);
+          $fileSendStatus = curl_exec($curl);
+          curl_close($curl);
+          $files = glob($path.'*');
+          foreach($files as $file){
+            if(is_file($file))
+              unlink($file);
+          }
+      }
+      echo json_encode('SUCCESS');
+    } else {
+      echo json_encode('ERROR');
+      // 
+      // echo json_decode($textSendStatus);
+    }
+  } else {
+    echo json_encode('NOTVALID');
   }
-
-// if (strlen($textMessage) < 200) {
-//      send one request
-// } else {
-//     send 2 request
-// }
-
-
-
-
-function curl($url, $data = [], $method = 'POST', $options = [])
-{
-    $default_options = [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HEADER => false,
-        CURLOPT_SSL_VERIFYPEER => false,
-    ];
-
-    if ($method === 'GET') {
-        $url .= (strpos($url, '?') === false) ? '?' : '&';
-        $url .= http_build_query($data);
-    } 
-    if ($method === 'POST') {
-        $options[CURLOPT_POSTFIELDS] = http_build_query($data);
-    } 
-    if ($method === 'JSON') {
-        $options[CURLOPT_POSTFIELDS] = json_encode($data);
-        $options[CURLOPT_HTTPHEADER][] = 'Content-Type:application/json';
-    }
-
-    $ch = curl_init($url);
-    curl_setopt_array($ch, array_replace($default_options, $options));
-
-    $result = curl_exec($ch);
-    if ($result === false) {
-        throw new ErrorException("Curl error: ".curl_error($ch), curl_errno($ch));
-    }
-    curl_close($ch);
-    return $result;
+} else {
+  header("Location: /");
 }
-
-echo curl($url, $getQuery);
 ?>
