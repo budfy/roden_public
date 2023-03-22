@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+@@include('components/page-blocks/_head.html',{
+"lang":"en",
+"title":"Roden - web design studio.",
+"description":"&#34Roden&#34 web studio is a team of professionals who have extensive experience in developing websites of various levels of complexity. One of our key features is an individual approach to each project. We believe that every site should have its own unique design that emphasizes its individuality and helps attract the attention of the audience. Our team specializes in the development of large news portals and corporate sites, but also has experience with small projects. We make every effort to ensure that we create websites that best meet the needs of our clients and their audiences. Our projects are created taking into account the best practices and modern technologies, which helps to ensure their efficiency and competitiveness in the market. We develop websites on various platforms including WordPress, ModX, Laravel and others. Our team has all the necessary knowledge and skills to develop complex, functional websites with high performance and reliability. Our web studio offers a full range of website development services, including conceptual design, design development, programming, testing and support. We make every effort to make the development process as simple and understandable as possible for our customers. We pride ourselves on our experience and knowledge, as well as our ability to provide our customers with quality and efficient solutions.",
+"keywords":"web studio, website development, custom design, corporate sites, news portals, programming, testing, support, WordPress, Drupal, Joomla, ModX, performance, reliability, web design, website design, site development, UX/ UI design, adaptive design, web development, creation of landing pages, mobile design.",
+"favicon":"img/favicons/favicon",
+
+"og":{
+"title":"Roden - web design studio.",
+"description":"&#34Roden&#34 web studio is a team of professionals who have extensive experience in developing websites of various levels of complexity. One of our key features is an individual approach to each project. We believe that every site should have its own unique design that emphasizes its individuality and helps attract the attention of the audience. Our team specializes in the development of large news portals and corporate sites, but also has experience with small projects. We make every effort to ensure that we create websites that best meet the needs of our clients and their audiences. Our projects are created taking into account the best practices and modern technologies, which helps to ensure their efficiency and competitiveness in the market. We develop websites on various platforms including WordPress, ModX, Laravel and others. Our team has all the necessary knowledge and skills to develop complex, functional websites with high performance and reliability. Our web studio offers a full range of website development services, including conceptual design, design development, programming, testing and support. We make every effort to make the development process as simple and understandable as possible for our customers. We pride ourselves on our experience and knowledge, as well as our ability to provide our customers with quality and efficient solutions.",
+"type":"website",
+"locale":"en-US",
+"url":"https://roden.design",
+"video":"video/roden_800x600_30.mp4",
+"image":"img/og_image/og-image.jpg"
+}
+
+})
+
+<body>
+  <div class="page-wrapper">
+    @@include('components/bem-blocks/mobile-menu/_mobile-menu.html')
+    <div class="page-bg">
+      <div class="page-bubble page-bubble-1">
+        <div class="page-bubble-inner"></div>
+      </div>
+      <div class="page-bubble page-bubble-2">
+        <div class="page-bubble-inner"></div>
+      </div>
+      <div class="page-bubble page-bubble-3">
+        <div class="page-bubble-inner"></div>
+      </div>
+    </div>
+    <div class="page-inner">
+      @@include('components/page-blocks/header/_header-en.html')
+      <main class="main">
+        @@include('components/bem-blocks/topbar/_topbar-en.html',{"class":"--main"})
+        <!-- @@include('components/page-blocks/methods/_methods.html') -->
+        <!-- @@include('components/page-blocks/cases/_cases.html') -->
+        <!-- @@include('components/page-blocks/messengers/_messengers.html') -->
+        <!-- @@include('components/page-blocks/accordion/_acordion.html') -->
+        <!-- @@include('components/page-blocks/advantages/_advantages.html') -->
+        @@include('components/page-blocks/in-develop/_in-develop-en.html')
+        @@include('components/page-blocks/contacts/_contacts-en.html')
+      </main>
+    </div>
+    @@include('components/page-blocks/footer/_footer-en.html')
+  </div>
+  @@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 function headerType() {
+  let strs = document.documentElement.lang !== "en" ? ["запускати", "покращувати", "підтримувати"] : ["launch", "improve", "support"];
   const typed = new Typed('.header__title-typed', {
-    strings: ["запускати", "покращувати", "підтримувати"],
+    strings: strs,
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 3000,
