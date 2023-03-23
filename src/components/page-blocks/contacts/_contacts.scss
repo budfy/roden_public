@@ -1,0 +1,126 @@
+.contacts {
+  position: relative;
+  z-index: 1;
+  margin-top: 5rem;
+  margin-bottom: -2rem;
+
+  @media screen and (max-width: 639px) {
+    margin-bottom: 0;
+  }
+
+  & .container.--base {
+    @media screen and (max-width: 639px) {
+      padding: 0;
+    }
+  }
+
+  &__inner {
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+
+  &__links {
+    width: 100%;
+
+    @media screen and (max-width: 639px) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__email {
+    display: block;
+    color: var(--color__black-0);
+    font-size: 1.5rem;
+
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+
+  &__links-wrapper {
+    flex-direction: column;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: row;
+      justify-content: center;
+      margin: 1rem -1.5rem 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin: 1rem -0.5rem 0;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    max-width: unset;
+
+    @media screen and (max-width: 991px) {
+      margin: 0.75rem 1.5rem;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    &+& {
+      margin-top: 1.5rem;
+
+      @media screen and (max-width: 991px) {
+        margin: 0.75rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__form {
+    flex: 0 1 50%;
+
+    background: linear-gradient(0deg, var(--color__back), var(--color__back)),
+      linear-gradient(180deg, var(--color__back) 0%, var(--color__grey-1) 100%);
+    box-shadow: 0 0.5rem 3rem var(--color__shadow-4);
+    border-radius: 0.5rem;
+    padding: 3.5rem 5.5rem;
+
+    @media screen and (max-width: 991px) {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-top: 5.5rem;
+    }
+
+    @media screen and (max-width: 639px) {
+      padding: 2.5rem 1.25rem 4rem;
+      border-radius: 0;
+    }
+  }
+
+  &__form-title {
+    color: var(--color__black-0);
+    font-size: 1.25rem;
+
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+
+  &__form-item {
+    margin-top: 2.75rem;
+
+    &+& {
+      margin-top: 2rem;
+    }
+  }
+
+  &__form-btn {
+    display: block;
+    margin: 3rem auto 0;
+  }
+}

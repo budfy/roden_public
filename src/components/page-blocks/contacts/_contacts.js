@@ -1,0 +1,48 @@
+function contactsForm() {
+  const form = document.querySelector('.contacts__form');
+  form.addEventListener("submit", submitForm)
+
+  function submitForm(event) {
+    // Зупиняємо перезавантаження сторінки під час відправки форми
+    event.preventDefault();
+
+    // Отримуємо дані з форми
+    const form = event.target;
+    const formData = new FormData(form);
+    let timestamp = new Date();
+    formData.append('Дата', timestamp.toLocaleString("UA-uk"));
+    // formData.append('file', form.querySelector('input[type=file]').files[0]);
+    for (const val of formData.values()) {
+      console.log(val);
+    }
+    // Відправляємо POST-запит за допомогою Axios
+    axios.post('./send.php', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      .then(response => {
+        // Обробляємо відповідь сервера
+        if (!response.data.ok) {
+          console.warn(response);
+          console.table(response.data);
+        }
+        // console.log(response);
+        form.reset();
+        return true;
+      })
+      .catch(error => {
+        // Обробляємо помилки відправки запиту
+        console.error(error);
+      });
+  }
+}
+
+contactsForm();
+
+function textareaAutoHeight() {
+  const ta = document.querySelector("textarea");
+  autosize(ta);
+}
+
+textareaAutoHeight();

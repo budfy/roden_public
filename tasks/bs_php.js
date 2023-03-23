@@ -4,7 +4,7 @@ module.exports = function bs_php() {
 	bs.init({
 		browser: ['default'],
 		watch: true,
-		proxy: '',
+		proxy: 'roden/',
 		logLevel: 'info',
 		logPrefix: 'BS-PHP:',
 		logConnections: true,

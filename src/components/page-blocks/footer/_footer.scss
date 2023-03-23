@@ -1,0 +1,36 @@
+.footer {
+  background: rgba(220, 220, 220, 0.25);
+  padding: 4.5rem 0;
+  z-index: 2;
+
+  &__inner {
+    @media screen and (max-width: 639px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__inner-menu {
+    @media screen and (max-width: 639px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__lang-link {
+    padding: 0.25em;
+    line-height: 1;
+    margin-left: 2rem;
+
+    @media screen and (max-width: 639px) {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+
+  &__copyright {
+    @media screen and (max-width: 639px) {
+      margin-top: 1rem;
+    }
+  }
+}

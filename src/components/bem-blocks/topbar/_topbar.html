@@ -8,19 +8,23 @@
       </a>
       <div class="topbar__inner flex --align-center">
 
-        @@include('../menu/_menu.html',{"class":"topbar__menu"})
+        <!-- @@include('../menu/_menu.html',{"class":"topbar__menu"}) -->
 
         <a href="tel:+380679852695"
            class="topbar__icon-link"
-           aria-label="Call by phone">
+           title="Подзвонити"
+           aria-label="Подзвонити">
           @@include("../../../svg/include/phone.svg",{"class":"topbar__icon-svg"})
         </a>
         <a href="mailto:hello@roden.design"
            class="topbar__icon-link"
-           aria-label="Send an email">
+           title="Відправити електронну пошту"
+           aria-label="Відправити електронну пошту">
           @@include("../../../svg/include/email.svg",{"class":"topbar__icon-svg"})</a>
-        <a href="#"
-           class="topbar__lang-link budgie --disabled">En</a>
+        <a href="./index-en.html"
+           class="topbar__lang-link budgie"
+           aria-label="Switch to English"
+           title="Switch to English">En</a>
       </div>
 
       <button class="topbar__burger budgie"

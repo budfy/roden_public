@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .flex {
@@ -75,8 +76,4 @@ h4,
 h5,
 h6 {
   margin: 0;
-}
-
-.page-wrapper {
-  overflow-x: hidden;
 }

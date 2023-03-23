@@ -16,8 +16,10 @@ function topbar() {
       document.querySelector('.topbar.--main').style.pointerEvents = "all";
       document.querySelector('.topbar.--main').style.boxShadow = "0 0.5rem 1.25rem rgba(0, 0, 0, 0.25)";
       document.querySelector('.topbar.--main .topbar__wrapper').style.alignItems = "center";
+      document.querySelector('.topbar.--main').style.height = "auto";
     } else if (currentScrollPos < screenHeight && document.querySelector('.topbar.--main')) {
       document.querySelector('.topbar.--main').style.opacity = 0;
+      document.querySelector('.topbar.--main').style.height = "0";
       document.querySelector('.topbar.--main').style.pointerEvents = "none";
       document.querySelector('.topbar.--main, .topbar.--main .topbar__logo, .topbar__wrapper').removeAttribute("style");
       document.querySelector('.topbar.--main .topbar__logo').removeAttribute("style");

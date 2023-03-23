@@ -2,8 +2,10 @@
   min-height: 100vh;
 
   // padding: 4rem 0;
+  padding-bottom: 1rem;
+
   @media screen and (max-width: 1023px) {
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
   }
 
   &__inner {
@@ -26,7 +28,13 @@
     }
   }
 
-  &__title {}
+  &__title {
+    min-height: 2em;
+
+    @media screen and (max-width: 767px) {
+      min-height: 3em;
+    }
+  }
 
   &__text {
     margin-top: 0.5rem;
