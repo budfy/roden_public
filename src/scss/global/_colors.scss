@@ -16,4 +16,35 @@
   --color__grey-1: #cfd7d3;
   --color__grey-2: #e8e8e8;
   --color__grey-3: #d3d3d3;
+
+  --color__be: #1769FF;
+  --color__tg: #25A2E0;
+  --color__wa: #25d366;
+  --color__vi: #7360f2;
+  --color__dr: #ea4c89;
+  --color__in: #6941CB;
+}
+
+.--be {
+  --color__social: var(--color__be);
+}
+
+.--tg {
+  --color__social: var(--color__tg);
+}
+
+.--wa {
+  --color__social: var(--color__wa);
+}
+
+.--vi {
+  --color__social: var(--color__vi);
+}
+
+.--dr {
+  --color__social: var(--color__dr);
+}
+
+.--in {
+  --color__social: var(--color__in);
 }

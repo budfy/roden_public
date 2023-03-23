@@ -5,12 +5,13 @@ on:
       - develop
       - 'feature/**'
       - 'hotfix/**'
-      - 'relese/**'
+      - 'release/**'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       # Here is the deployment action
       - name: Upload from docs via FTP
         uses: airvzxf/ftp-deployment-action@latest
