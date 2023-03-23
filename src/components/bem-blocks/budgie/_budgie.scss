@@ -17,20 +17,16 @@
   justify-content: center;
 
   &__social-icon {
-    filter: grayscale(1);
+    color: inherit;
     display: block;
     height: 1.5em;
     width: 1.5em;
-    transition: all ease-in-out 0.25s;
   }
 
   &:hover {
+    text-decoration: none;
     box-shadow: 0 0.5em 3em var(--color__shadow-2);
     color: var(--color__purple);
-
-    .budgie__social-icon {
-      filter: grayscale(0)
-    }
   }
 
   &:focus {
