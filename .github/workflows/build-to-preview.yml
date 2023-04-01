@@ -1,25 +1,39 @@
-name: CI -> Deploy to Test
+name: Deploy to preview FTP 🖥️
 on:
   push:
-    branches: 
+    branches:
       - develop
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'release/**'
+      - feature/*
+      - hotfix/*
+      - release/*
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      
-      # Here is the deployment action
-      - name: Upload from docs via FTP
-        uses: airvzxf/ftp-deployment-action@latest
-        with:
-          server: leaf.cityhost.com.ua
-          user: ch38e6a975_roden-prev
-          password: ${{ secrets.FTP_PASSWORD_PREV }}
-          local_dir: "./docs"
-          remote_dir: "./"
-          delete: "true"
-          max_retries: "7"
+    - name: 🚩Checkout repository 
+      uses: actions/checkout@v2
+
+    - name: 💻Set up FTP dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y lftp
+
+    - name: 🧹Clean remote directory 
+      env:
+        FTP_USER: ${{ secrets.FTP_USERNAME_PREV }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_PREV }}
+        FTP_HOST: ${{ secrets.FTP_HOST }}
+        REMOTE_PATH: ./
+      run: |
+        lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; rm -rf $REMOTE_PATH"
+
+    - name: 📥Deploy to FTP 
+      env:
+        FTP_USER: ${{ secrets.FTP_USERNAME_PREV }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_PREV }}
+        FTP_HOST: ${{ secrets.FTP_HOST }}
+        REMOTE_PATH: ./
+      run: |
+        lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -R ./docs/ $REMOTE_PATH"
