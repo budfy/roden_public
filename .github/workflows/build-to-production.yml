@@ -33,4 +33,4 @@ jobs:
         FTP_HOST: ${{ secrets.FTP_HOST }}
         REMOTE_PATH: ./
       run: |
-        lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -R ./docs $REMOTE_PATH"
+        lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -R ./docs/ $REMOTE_PATH"
