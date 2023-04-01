@@ -44,14 +44,14 @@
     "imagemin-pngquant": "^9.0.2",
     "require-dir": "^1.2.0",
     "sass": "^1.56.0",
+    "ttf2woff": "^3.0.0",
+    "ttf2woff2": "^4.0.5",
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
     "autosize": "^6.0.1",
     "axios": "^1.3.4",
     "reseter.css": "^2.0.0",
-    "ttf2woff": "^3.0.0",
-    "ttf2woff2": "^4.0.5",
     "typed.js": "^2.0.132"
   }
 }
