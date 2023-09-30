@@ -34,3 +34,12 @@ jobs:
         REMOTE_PATH: ./
       run: |
         lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -R ./docs/ $REMOTE_PATH"
+            
+            
+    - name: 📱Inform
+      uses: yanzay/notify-telegram@v0.1.0
+      if: always()
+      with:
+        chat: ${{ secrets.TG_CHAT }} # user id or channel name secret
+        token: ${{ secrets.TG_TOKEN }} # token secret
+        status: ${{ job.status }} # do not modify this line
